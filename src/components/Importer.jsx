@@ -90,9 +90,9 @@ export default function Importer({ subjects, setSubjects, flashcards, setFlashca
 
           <div className="text-xs text-slate-500 leading-relaxed">
             <p className="font-medium text-slate-400 mb-1">Formats</p>
-            <p><b>Flashcards:</b> JSON <code>[{{"front":"Q","back":"A"}}]</code> or CSV <code>front,back</code>.</p>
-            <p><b>MCQs:</b> JSON <code>[{{"question":"...","options":[4],"answer":"C","explanation":"..."}}]</code> (answer A-D) or CSV <code>question,A,B,C,D,correct,explanation</code>.</p>
-            <p><b>Subjects:</b> JSON <code>[{{"name":"Cardiology","topics":["Heart Failure"]}}]</code> or CSV <code>subject,topic</code>.</p>
+            <p><b>Flashcards:</b> JSON <code>{'[{"front":"Q","back":"A"}]'}</code> or CSV <code>front,back</code>.</p>
+            <p><b>MCQs:</b> JSON <code>{'[{"question":"...","options":[4],"answer":"C","explanation":"..."}]'}</code> (answer A-D) or CSV <code>question,A,B,C,D,correct,explanation</code>.</p>
+            <p><b>Subjects:</b> JSON <code>{'[{"name":"Cardiology","topics":["Heart Failure"]}]'}</code> or CSV <code>subject,topic</code>.</p>
           </div>
 
           {result && (
