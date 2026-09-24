@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#05070f" />
+    <meta name="description" content="SynapseEdu — offline-first academic & clinical learning suite: dual-engine notebook, SynapseAI copilot, MCQ engine, spaced repetition." />
+    <title>SynapseEdu</title>
+    <!-- Runtime polyfills: Excalidraw reads window.EXCALIDRAW_ASSET_PATH for its
+         offline font bundles, and references `process.env` in a few places. -->
+    <script>
+      window.process = window.process || { env: {}, browser: true };
+      // Resolve the Excalidraw asset folder relative to wherever this page is
+      // served (works at domain root, /repo/ subpaths, and the local sync hub).
+      window.EXCALIDRAW_ASSET_PATH = window.EXCALIDRAW_ASSET_PATH || new URL('excalidraw-assets/', document.baseURI).href;
+      if (location.port === '5183') {
+        window.__SYNAPSE_SYNC__ = true;
+      }
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
